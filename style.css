@@ -1,0 +1,324 @@
+
+
+:root {
+    --task-text-color: #879bb3;
+    --main-task-color: rgb(248, 234, 234);
+    --input-and-checkboxes-color: #879bb3;
+    --btn-color: #6b7a8d;
+    --text-color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+
+* {
+    font-family: "Noto Sans Mono", monospace;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 520;
+    font-size: 21px;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url(img/background/background_image.png);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center center; 
+    cursor: default;*/
+} 
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/background/background_image.png);
+    background-repeat: no-repeat;
+    background-position: center center; 
+    z-index: -1;
+}
+
+.app_container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-nav > input[type="radio"] {
+    display: none;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  #content-1:has(~ .tab-nav > #tab-btn-1:checked),
+  #content-2:has(~ .tab-nav > #tab-btn-2:checked),
+  #content-3:has(~ .tab-nav > #tab-btn-3:checked) {
+    display: block;
+  }
+
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    order: -1;
+  }
+
+  .tab-nav > label {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    background: 0 0;
+    border: 1px solid transparent;
+    margin-bottom: -1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    -webkit-appearance: button;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    margin-right: 2px;
+    cursor: pointer;
+  }
+
+  .tab-nav > input[type="radio"] + label {
+    background-color: var(--main-task-color);
+    color: var(--task-text-color)
+  }
+
+  .tab-nav > input[type="radio"]:checked + label {
+    color: var(--text-color);
+    background-color: var(--input-and-checkboxes-color);
+    cursor: pointer;
+  }
+
+
+.input_line__container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 20px;
+    width: 100%;
+}
+
+input {
+    border-radius: 0 10px 10px 10px;
+    background-color:var(--input-and-checkboxes-color);
+    color: var(--text-color);
+    font-family: "Noto Sans Mono", monospace;
+    width: 80%;
+    height: 40px;
+    font-size: 18px;
+    box-shadow: none;
+    border: none;
+    padding: 0 15px;
+    margin-right: 20px;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--text-color);
+}
+
+.no_task_message {
+    font-family: "Noto Sans Mono", monospace;
+    font-size: 25px;
+    color: var(--text-color);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    font-size: 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--btn-color);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.button_text {
+    color: var(--text-color);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.task_list_in_progress_text {
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.task_list_completed_text {
+    color: var(--text-color);
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.in_progress_task_list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.completed_task_list_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+}
+
+.task_container, .done {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 5px auto;
+    width: 100%;
+    padding: 10px 0;
+    padding-right: 20xp;
+    background-color: var(--main-task-color);
+    border-radius: 10px;
+    color: var(--task-text-color);
+    overflow-wrap: break-word;
+    position: relative; 
+}
+
+.task_name {
+    margin-left: 45px;
+    margin-right: 45px;
+    width: calc(100% - 45px - 45px);
+}
+
+.mark_done_container {
+    position: absolute;
+    left: 10px; 
+    width: 23px;
+    height: 23px;
+    background-color:var(--input-and-checkboxes-color);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.active {
+    background-image: url('img/icons/tic.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+}
+
+.delete_task {
+    position: absolute;
+    background: url(img/icons/garbage.png);
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.delete_task:hover {
+    width: 34px;
+    height: 34px;
+    right: 8px;
+}
+
+@media (min-width: 768px) {
+    .app_container {
+        width: 80%;
+    }
+
+    .in_progress_task_list_container {
+        width: 100%;
+    }
+
+    .completed_task_list_container {
+        width: 100%;
+    }
+
+    input {
+        width: 90%;
+    }
+}
+
+@media (min-width: 0px) {
+    .app_container {
+        width: 80%;
+    }
+
+    .in_progress_task_list_container {
+        width: 100%;
+    }
+
+    .completed_task_list_container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 460px) {
+    input {
+        width: 91%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .app_container {
+        width: 40%;
+    }
+
+    input {
+        width: 91%;
+    }
+
+}
+
+@media (max-width: 620px) {
+    .tab-nav {
+        display: none;
+    }
+
+    .input_line__container {
+        margin-top: 20px;
+    }
+}

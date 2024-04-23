@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="app_container">
+        <div class="tab-nav">
+            <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+            <label for="tab-btn-1">All tasks</label>
+            <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+            <label for="tab-btn-2">In progress</label>
+            <input id="tab-btn-3" name="tab-btn" type="radio" value="">
+            <label for="tab-btn-3">Completed</label>
+        </div>
+        <div class="input_line__container">
+            <input type="text" placeholder="Add new task" class="new_task_text">
+            <div class="button"><div class="button_text">+</div></div>
+        </div>
+        <div class="no_task_message">Your tasks will be here</div>
+        <div class="in_progress_task_list_container">
+        </div>
+        <div class="completed_task_list_container">
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
