@@ -217,7 +217,6 @@ function checkEmptyLists() {
 
     if (taskCompletedText && completedList.childElementCount === 1) {
         taskCompletedText.style.display = 'none';
-        // Добавить код для создания сообщения о пустом списке
     } else if (taskCompletedText) {
         taskCompletedText.style.display = 'block';
     }
